@@ -1,0 +1,41 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Generate Prisma client
+      run: npx prisma generate
+      
+    - name: Build application
+      run: npm run build
+      env:
+        DATABASE_URL: "file:./dev.db"
+        NEXTAUTH_URL: "https://your-app-name.vercel.app"
+        NEXTAUTH_SECRET: "your-secret-key"
+        NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: "your-cloudinary-name"
+        CLOUDINARY_API_KEY: "your-cloudinary-key"
+        CLOUDINARY_API_SECRET: "your-cloudinary-secret"
+        STRIPE_PUBLISHABLE_KEY: "pk_test_your_stripe_key"
+        STRIPE_SECRET_KEY: "sk_test_your_stripe_key"
+        STRIPE_WEBHOOK_SECRET: "whsec_your_webhook_secret"
+        NEXT_PUBLIC_APP_URL: "https://your-app-name.vercel.app"
