@@ -5,5 +5,8 @@
       "maxDuration": 30
     }
   },
+  "env": {
+    "DATABASE_URL": "file:./dev.db"
+  },
   "buildCommand": "npm run vercel-build"
 }
