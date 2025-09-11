@@ -47,72 +47,73 @@ export default async function HomePage() {
         </section>
 
         {/* Featured Categories */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="group hover:shadow-lg transition-shadow">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl">Sunglasses</CardTitle>
-                  <CardDescription>
-                    Protect your eyes in style with our premium sunglasses collection
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full mb-4 flex items-center justify-center">
-                    <span className="text-4xl">🕶️</span>
-                  </div>
-                  <Link href="/products?category=sunglasses">
-                    <Button className="w-full">
-                      Explore Sunglasses
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="group hover:shadow-lg transition-shadow">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl">Eyeglasses</CardTitle>
-                  <CardDescription>
-                    Find the perfect frames to complement your unique style
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mb-4 flex items-center justify-center">
-                    <span className="text-4xl">👓</span>
-                  </div>
-                  <Link href="/products?category=eyeglasses">
-                    <Button className="w-full">
-                      Explore Eyeglasses
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="group hover:shadow-lg transition-shadow">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl">Contact Lenses</CardTitle>
-                  <CardDescription>
-                    Experience clear vision with our comfortable contact lenses
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-green-400 to-teal-500 rounded-full mb-4 flex items-center justify-center">
-                    <span className="text-4xl">🔍</span>
-                  </div>
-                  <Link href="/products?category=contact-lenses">
-                    <Button className="w-full">
-                      Explore Contacts
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Card className="group hover:shadow-lg transition-shadow h-full flex flex-col">
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl">Sunglasses</CardTitle>
+          <CardDescription className="min-h-[40px] flex items-center justify-center">
+            Protect your eyes in style with our premium sunglasses collection
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="text-center flex flex-col flex-grow justify-between">
+          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full mb-6 flex items-center justify-center">
+            <span className="text-4xl">🕶️</span>
           </div>
-        </section>
+          <Link href="/products?category=sunglasses" prefetch className="mt-auto">
+            <Button className="w-full">
+              Explore Sunglasses
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </CardContent>
+      </Card>
+
+      <Card className="group hover:shadow-lg transition-shadow h-full flex flex-col">
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl">Eyeglasses</CardTitle>
+          <CardDescription className="min-h-[40px] flex items-center justify-center">
+            Find the perfect frames to complement your unique style
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="text-center flex flex-col flex-grow justify-between">
+          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mb-6 flex items-center justify-center">
+            <span className="text-4xl">👓</span>
+          </div>
+          <Link href="/products?category=eyeglasses" prefetch className="mt-auto">
+            <Button className="w-full">
+              Explore Eyeglasses
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </CardContent>
+      </Card>
+
+      <Card className="group hover:shadow-lg transition-shadow h-full flex flex-col">
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl">Contact Lenses</CardTitle>
+          <CardDescription className="min-h-[40px] flex items-center justify-center">
+            Experience clear vision with our comfortable contact lenses
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="text-center flex flex-col flex-grow justify-between">
+          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-green-400 to-teal-500 rounded-full mb-6 flex items-center justify-center">
+            <span className="text-4xl">🔍</span>
+          </div>
+          <Link href="/products?category=contact-lenses" prefetch className="mt-auto">
+            <Button className="w-full">
+              Explore Contacts
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
+
 
         {/* Featured Products */}
         <section className="py-16">
